@@ -66,6 +66,18 @@ query.
 
 ## What a human has to do
 
+### One thing that looks broken until you switch, and isn't
+
+`og:image` on every page points at `https://www.djchannell.com/assets/img/og-cover.jpg`
+— the final domain, which today still serves the Wix site. So **if you paste the
+`dj-channel.vercel.app` link into iMessage or Slack right now, the preview card
+will have no image.** That's expected. The tag is written for where the site is
+going, not for the temporary preview host, and it starts working the moment DNS
+moves. Nothing to change.
+
+If you need a good-looking preview before cutover, temporarily swap the four
+`og:image` tags to the `dj-channel.vercel.app` URL and swap them back on the day.
+
 ### Before you switch DNS
 
 1. **Point the domain at Vercel.** In the Vercel project → Settings → Domains,
