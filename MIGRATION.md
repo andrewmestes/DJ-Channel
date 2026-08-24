@@ -66,17 +66,27 @@ query.
 
 ## What a human has to do
 
-### One thing that looks broken until you switch, and isn't
+### Social preview tags are pointed at the preview domain on purpose
 
-`og:image` on every page points at `https://www.djchannell.com/assets/img/og-cover.jpg`
-— the final domain, which today still serves the Wix site. So **if you paste the
-`dj-channel.vercel.app` link into iMessage or Slack right now, the preview card
-will have no image.** That's expected. The tag is written for where the site is
-going, not for the temporary preview host, and it starts working the moment DNS
-moves. Nothing to change.
+`og:image` and `og:url` currently point at `dj-channel.vercel.app`, not at
+`www.djchannell.com`. That's deliberate: a link preview only renders if the
+image URL actually resolves, and `www.djchannell.com` still serves Wix, so
+pointing there gives a blank card in iMessage — or worse, a scraper that follows
+`og:url` and previews the *old Wix site* instead of this one.
 
-If you need a good-looking preview before cutover, temporarily swap the four
-`og:image` tags to the `dj-channel.vercel.app` URL and swap them back on the day.
+`<link rel="canonical">` is **not** pointed at the preview domain. It stays on
+`www.djchannell.com` so Google consolidates on the real domain and never indexes
+the staging URL.
+
+On cutover day, flip the social tags in one command:
+
+```bash
+python3 set-domain.py live
+```
+
+(Strictly optional — the `.vercel.app` alias keeps resolving after DNS moves, so
+the preview would keep working either way. It's just tidier for the tags to
+match the domain people actually see.)
 
 ### Before you switch DNS
 
