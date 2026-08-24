@@ -139,7 +139,7 @@
 
 <!-- ══════════════════════════ MARQUEE ══════════════════════════ -->
 <div class="marquee" aria-label="Brands and stages DJ CHANNELL has performed for">
-  <div class="marquee__track">
+  <div class="marquee__track" data-loop>
     <div class="marquee__set">
       <span class="marquee__item">Global Dance Festival at Red Rocks</span>
       <span class="marquee__item">Red Bull</span>
@@ -150,6 +150,29 @@
     </div>
   </div>
 </div>
+
+<!-- ══════════════════════════ REVIEW RIBBON ══════════════════════════ -->
+<section class="ribbon" aria-label="Recent Google reviews">
+  <div class="wrap wrap--wide">
+    <div class="ribbon__grid">
+      <div class="ribbon__item">
+        <div class="ribbon__stars" aria-label="5 out of 5"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.6 7 .9-5.2 4.8 1.4 7-6.2-3.4L5.8 21l1.4-7L2 9.5l7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.6 7 .9-5.2 4.8 1.4 7-6.2-3.4L5.8 21l1.4-7L2 9.5l7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.6 7 .9-5.2 4.8 1.4 7-6.2-3.4L5.8 21l1.4-7L2 9.5l7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.6 7 .9-5.2 4.8 1.4 7-6.2-3.4L5.8 21l1.4-7L2 9.5l7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.6 7 .9-5.2 4.8 1.4 7-6.2-3.4L5.8 21l1.4-7L2 9.5l7-.9z"/></svg></div>
+        <p>“Every time I’ve seen him the dance floor is packed!”</p>
+        <cite>Jonathan Bullman · Google</cite>
+      </div>
+      <div class="ribbon__item">
+        <div class="ribbon__stars" aria-label="5 out of 5"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.6 7 .9-5.2 4.8 1.4 7-6.2-3.4L5.8 21l1.4-7L2 9.5l7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.6 7 .9-5.2 4.8 1.4 7-6.2-3.4L5.8 21l1.4-7L2 9.5l7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.6 7 .9-5.2 4.8 1.4 7-6.2-3.4L5.8 21l1.4-7L2 9.5l7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.6 7 .9-5.2 4.8 1.4 7-6.2-3.4L5.8 21l1.4-7L2 9.5l7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.6 7 .9-5.2 4.8 1.4 7-6.2-3.4L5.8 21l1.4-7L2 9.5l7-.9z"/></svg></div>
+        <p>“My entire family, regardless of age, was on the dance floor grooving until the end of the wedding night.”</p>
+        <cite>Blaine McBeth · Google</cite>
+      </div>
+      <div class="ribbon__item">
+        <div class="ribbon__stars" aria-label="5 out of 5"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.6 7 .9-5.2 4.8 1.4 7-6.2-3.4L5.8 21l1.4-7L2 9.5l7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.6 7 .9-5.2 4.8 1.4 7-6.2-3.4L5.8 21l1.4-7L2 9.5l7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.6 7 .9-5.2 4.8 1.4 7-6.2-3.4L5.8 21l1.4-7L2 9.5l7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.6 7 .9-5.2 4.8 1.4 7-6.2-3.4L5.8 21l1.4-7L2 9.5l7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.6 7 .9-5.2 4.8 1.4 7-6.2-3.4L5.8 21l1.4-7L2 9.5l7-.9z"/></svg></div>
+        <p>“He shows up and puts on the best show.”</p>
+        <cite>Kaila Gettig · Google Local Guide</cite>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ══════════════════════════ ABOUT / MY SERVICES ══════════════════════════ -->
 <section class="about pad" id="story">
@@ -280,7 +303,9 @@
         <div class="figure--stack">
           <div class="figure"><img src="assets/img/wedding-flowergirl.jpg" alt="DJ CHANNELL taking a request from a flower girl at the DJ booth" style="height:100%"></div>
           <div class="figure"><img src="assets/img/wedding-tent.jpg" alt="DJ CHANNELL set up under a wedding reception tent"></div>
-          <div class="figure"><img src="assets/img/crowd-hands.jpg" alt="Wedding guests with hands in the air on the dance floor"></div>
+          <div class="phone phone--wed">
+            <video src="assets/video/booth-vertical.mp4" poster="assets/img/poster-booth.jpg" muted loop playsinline autoplay preload="metadata" aria-label="A Northern Colorado wedding reception, filmed from the booth"></video>
+          </div>
         </div>
       </div>
 
@@ -300,6 +325,10 @@
           Reading a crowd is what I do best.
         </p>
 
+        <blockquote class="qinline rv rv-d3">
+          <p>“He is both personable and professional and makes everything so fun and enjoyable minus the cheesy stereotypical wedding DJ vibe you see sometimes.”</p>
+          <footer><span class="rev__stars" aria-label="5 out of 5"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.6 7 .9-5.2 4.8 1.4 7-6.2-3.4L5.8 21l1.4-7L2 9.5l7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.6 7 .9-5.2 4.8 1.4 7-6.2-3.4L5.8 21l1.4-7L2 9.5l7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.6 7 .9-5.2 4.8 1.4 7-6.2-3.4L5.8 21l1.4-7L2 9.5l7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.6 7 .9-5.2 4.8 1.4 7-6.2-3.4L5.8 21l1.4-7L2 9.5l7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.6 7 .9-5.2 4.8 1.4 7-6.2-3.4L5.8 21l1.4-7L2 9.5l7-.9z"/></svg></span><cite>Brendan Unitt · Google</cite></footer>
+        </blockquote>
         <div class="rv rv-d3" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px">
           <a class="btn btn--primary" href="#book">Click to Get a Quote</a>
           <a class="btn btn--ghost" href="song-requests.html">Already booked? Send song requests</a>
@@ -342,26 +371,45 @@
 
 <!-- ══════════════════════════ 360 BOOTH ══════════════════════════ -->
 <section class="booth pad" id="booth">
-  <div class="wrap">
-    <div class="booth__grid">
+  <div class="wrap wrap--wide">
 
-      <div class="rv">
-        <div class="phone">
-          <video src="assets/video/booth-vertical.mp4" poster="assets/img/poster-booth.jpg" muted loop playsinline autoplay preload="metadata"></video>
-        </div>
+    <div class="shead rv" style="max-width:none">
+      <p class="eyebrow">360 Video / Photo Booth Rental</p>
+      <h2 class="display h2" style="margin-bottom:22px">The thing everyone<br>posts <span class="grad-text">that same night.</span></h2>
+      <p class="lead" style="max-width:64ch">
+        The 360 Spinning Images photo booth creates a one-of-a-kind experience! While guests stand on an elevated
+        platform, a slow-motion arm captures a video from all angles. The end result is an unforgettable memory
+        made for every type of event.
+      </p>
+    </div>
+
+    <p class="vidhead rv">Videos from past events:</p>
+
+    <div class="vidgrid rv rv-d1">
+      <button class="vfac vfac--tall" data-yt="jaCkYUIauNo" type="button" aria-label="Play: 360 Video/Photo Booth. NOCO 360 Photos">
+        <img src="assets/img/yt-booth-noco.jpg" alt="Guests laughing on the 360 photo booth platform" loading="lazy">
+        <span class="vfac__play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.6v12.8a1 1 0 0 0 1.53.85l10.1-6.4a1 1 0 0 0 0-1.7L9.53 4.75A1 1 0 0 0 8 5.6z"/></svg></span>
+        <span class="vfac__label"><span>NoCo 360 Photos</span><b>360 Video /<br>Photo Booth</b></span>
+      </button>
+
+      <div class="vidgrid__side">
+        <button class="vfac vfac--wide" data-yt="7f0W9pak2XM" type="button" aria-label="Play: Black Tie 360 Event">
+          <img src="assets/img/yt-booth-blacktie.jpg" alt="Guests on the 360 photo booth at a black tie event" loading="lazy">
+          <span class="vfac__play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.6v12.8a1 1 0 0 0 1.53.85l10.1-6.4a1 1 0 0 0 0-1.7L9.53 4.75A1 1 0 0 0 8 5.6z"/></svg></span>
+          <span class="vfac__label"><b>Black Tie 360 Event</b><span>Corporate / formal</span></span>
+        </button>
+        <button class="vfac vfac--wide" data-yt="pqyzmyGLuAg" type="button" aria-label="Play: Wedding fun with NoCo 360 Photos">
+          <img src="assets/img/yt-booth-wedding.jpg" alt="Wedding guests on the 360 photo booth" loading="lazy">
+          <span class="vfac__play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.6v12.8a1 1 0 0 0 1.53.85l10.1-6.4a1 1 0 0 0 0-1.7L9.53 4.75A1 1 0 0 0 8 5.6z"/></svg></span>
+          <span class="vfac__label"><b>Wedding fun with<br>NoCo 360 Photos!</b><span>Reception</span></span>
+        </button>
       </div>
+    </div>
 
+    <div class="split" style="margin-top:clamp(48px,6vw,80px);align-items:start">
       <div>
-        <p class="eyebrow rv">360 Video / Photo Booth Rental</p>
-        <h2 class="display h2 rv" style="margin-bottom:22px">The thing everyone<br>posts <span class="grad-text">that same night.</span></h2>
-        <p class="lead rv rv-d1">
-          The 360 Spinning Images photo booth creates a one-of-a-kind experience! While guests stand on an elevated
-          platform, a slow-motion arm captures a video from all angles. The end result is an unforgettable memory
-          made for every type of event.
-        </p>
-
-        <p class="eyebrow rv rv-d2" style="margin-top:34px">Each rental will include the following</p>
-        <ul class="incl rv rv-d2">
+        <p class="eyebrow rv">Each rental will include the following</p>
+        <ul class="incl rv">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Delivery, Set-up, and Takedown</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Onsite Technician / Operator</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>360 Photo Booth (Holds 5-7 people)</li>
@@ -372,14 +420,23 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Props (signs, jewelry, glasses, hats, money gun, and inflatables)</li>
           <li style="grid-column:1/-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Sharing Station that allows you to receive your video on the spot!</li>
         </ul>
-
-        <div class="rv rv-d3" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:30px">
+      </div>
+      <div>
+        <blockquote class="qinline rv" style="margin-top:0">
+          <p>“His 360 photo booth is the coolest thing I’ve seen in my life!!!!”</p>
+          <footer><span class="rev__stars" aria-label="5 out of 5"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.6 7 .9-5.2 4.8 1.4 7-6.2-3.4L5.8 21l1.4-7L2 9.5l7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.6 7 .9-5.2 4.8 1.4 7-6.2-3.4L5.8 21l1.4-7L2 9.5l7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.6 7 .9-5.2 4.8 1.4 7-6.2-3.4L5.8 21l1.4-7L2 9.5l7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.6 7 .9-5.2 4.8 1.4 7-6.2-3.4L5.8 21l1.4-7L2 9.5l7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.6 7 .9-5.2 4.8 1.4 7-6.2-3.4L5.8 21l1.4-7L2 9.5l7-.9z"/></svg></span><cite>Google review</cite></footer>
+        </blockquote>
+        <div class="rv rv-d1" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:24px">
           <a class="btn btn--primary" href="#book">Click for a Quote</a>
           <a class="btn btn--ghost" href="#faq">Read the FAQ</a>
         </div>
+        <p class="muted rv rv-d2" style="font-size:.86rem;margin-top:22px">
+          Insured for staff, property, equipment and venue. Booth needs a level 12'&nbsp;×&nbsp;12' area,
+          power within 30 feet, and Wi-Fi or cell service — <a href="#faq" style="color:var(--violet);font-weight:700">full requirements in the FAQ</a>.
+        </p>
       </div>
-
     </div>
+
   </div>
 </section>
 
@@ -392,59 +449,105 @@
       <p class="lead">The same ear that reads ten thousand people at Red Rocks is the one reading your hundred and twenty.</p>
     </div>
 
-    <div class="artists__top rv">
-      <div class="headliner"><div><small>Opened for</small><span>Ice Cube</span></div></div>
-      <div class="headliner"><div><small>Opened for</small><span>Lil Jon</span></div></div>
+    <div class="billing rv">
+
+      <article class="bill">
+        <img src="assets/img/artist-vinyl.jpg" alt="Kyle Channell with Ice Cube, holding a signed Ice Cube vinyl" style="object-position:center 18%">
+        <p class="bill__tag">Opened for</p>
+        <h3 class="bill__name">Ice Cube</h3>
+        <p class="bill__note">He walked off that one holding a signed “You Can Do It” pressing.</p>
+      </article>
+
+      <article class="bill bill--order">
+        <p class="bill__tag">On the bill</p>
+        <p class="bill__day">Sunday, June 11th</p>
+        <ul class="order">
+          <li><time>12:55pm</time>School of Rock House Band</li>
+          <li><time>1:35pm</time>Bourbon Brass Band</li>
+          <li><time>2:15pm</time>Modrn</li>
+          <li><time>2:55pm</time>Emma Marie Band</li>
+          <li><time>3:35pm</time>Elektrik Animals</li>
+          <li><time>4:15pm</time>Grim Keifer</li>
+          <li><time>4:55pm</time>Thin Air Crew</li>
+          <li class="is-him"><time>5:45pm</time><span>DJ Channell</span></li>
+          <li class="is-head"><time>6:45pm</time><span>Lil Jon</span></li>
+        </ul>
+      </article>
+
+      <article class="bill">
+        <img src="assets/img/artists-group.jpg" alt="Kyle Channell with Nappy Roots outside the venue" style="object-position:center 30%">
+        <p class="bill__tag">Opened for</p>
+        <h3 class="bill__name">Nappy Roots</h3>
+        <p class="bill__note">One of forty-eight names on the list — and he’s wearing their shirt in the photo.</p>
+      </article>
+
     </div>
 
-    <ul class="wall rv rv-d1">
-      <li>Sugar Hill Gang</li><li>Rob Base</li><li>Coolio</li><li>Afroman</li><li>Nappy Roots</li>
-      <li>Talib Kweli</li><li>Bone Thugs N Harmony</li><li>Kotton Mouth Kings</li><li>Cory Gunz</li>
-      <li>DJ Paul (Three 6 Mafia)</li><li>KRS-ONE</li><li>Butch Clancy</li><li>Chingy</li><li>Petey Pablo</li>
-      <li>Grives</li><li>That 1 guy</li><li>Devin The Dude</li><li>Seckond Chaynce</li><li>Chanel West Coast</li>
-      <li>Obie Trice</li><li>Sunspot Jonz</li><li>Murs</li><li>SnakeHips</li><li>Ace Hood</li><li>Yung Joc</li>
-      <li>CandyLand</li><li>Krewella</li><li>Shwayze</li><li>Brother Ali</li><li>RITZ</li><li>DJ UNK</li>
-      <li>Baby Bash</li><li>Snow The Product</li><li>Slum Village</li><li>DJ Strizzo</li><li>Chris Karns</li>
-      <li>Kingery</li><li>Bezz Believe</li><li>69 Boyz</li><li>PROF</li><li>Chali 2na (Jurassic 5)</li>
-      <li>Dead Prez</li><li>Evidence</li><li>Marty Party</li><li>Vibesquad</li><li>Living Legends</li>
-    </ul>
+    <div class="rollwall rv rv-d1" aria-label="Artists DJ CHANNELL has opened for">
+      <div class="rollrow"><div class="rolltrack" data-loop><div class="rollset">
+          <div class="rollcard"><span>Opened for</span><b>Sugar Hill Gang</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Rob Base</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Coolio</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Afroman</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Nappy Roots</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Talib Kweli</b></div>
+          <figure class="rollphoto"><img src="assets/img/selfie-artists.jpg" alt="DJ CHANNELL on stage in front of a packed house" loading="lazy"><figcaption>Packed house</figcaption></figure>
+          <div class="rollcard"><span>Opened for</span><b>Bone Thugs N Harmony</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Kotton Mouth Kings</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Cory Gunz</b></div>
+          <div class="rollcard"><span>Opened for</span><b>DJ Paul (Three 6 Mafia)</b></div>
+          <div class="rollcard"><span>Opened for</span><b>KRS-ONE</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Butch Clancy</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Chingy</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Petey Pablo</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Grives</b></div>
+          <div class="rollcard"><span>Opened for</span><b>That 1 guy</b></div>
+      </div></div></div>
+      <div class="rollrow"><div class="rolltrack" data-loop><div class="rollset">
+          <div class="rollcard"><span>Opened for</span><b>Devin The Dude</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Seckond Chaynce</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Chanel West Coast</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Obie Trice</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Sunspot Jonz</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Murs</b></div>
+          <div class="rollcard"><span>Opened for</span><b>SnakeHips</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Ace Hood</b></div>
+          <figure class="rollphoto"><img src="assets/img/live-mic.jpg" alt="DJ CHANNELL on the decks behind a live MC" loading="lazy"><figcaption>On the decks</figcaption></figure>
+          <div class="rollcard"><span>Opened for</span><b>Yung Joc</b></div>
+          <div class="rollcard"><span>Opened for</span><b>CandyLand</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Krewella</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Shwayze</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Brother Ali</b></div>
+          <div class="rollcard"><span>Opened for</span><b>RITZ</b></div>
+          <div class="rollcard"><span>Opened for</span><b>DJ UNK</b></div>
+      </div></div></div>
+      <div class="rollrow"><div class="rolltrack" data-loop><div class="rollset">
+          <div class="rollcard"><span>Opened for</span><b>Baby Bash</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Snow The Product</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Slum Village</b></div>
+          <div class="rollcard"><span>Opened for</span><b>DJ Strizzo</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Chris Karns</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Kingery</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Bezz Believe</b></div>
+          <figure class="rollphoto"><img src="assets/img/venue-crowd.jpg" alt="A full venue seen from the stage" loading="lazy"><figcaption>From the stage</figcaption></figure>
+          <div class="rollcard"><span>Opened for</span><b>69 Boyz</b></div>
+          <div class="rollcard"><span>Opened for</span><b>PROF</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Chali 2na (Jurassic 5)</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Dead Prez</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Evidence</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Marty Party</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Vibesquad</b></div>
+          <div class="rollcard"><span>Opened for</span><b>Living Legends</b></div>
+      </div></div></div>
+    </div>
+
+    <p class="wallnote rv rv-d2"><b>48</b> artists, and counting</p>
 
     <div class="proof">
       <figure class="rv"><img src="assets/img/liljon-lineup.jpg" alt="Festival lineup poster listing DJ CHANNELL before Lil Jon"><figcaption>On the bill</figcaption></figure>
       <figure class="rv rv-d1"><img src="assets/img/redbull-car.jpg" alt="DJ CHANNELL's setup beside the Red Bull car"><figcaption>Red Bull</figcaption></figure>
       <figure class="rv rv-d2"><img src="assets/img/redbull-bmx.jpg" alt="BMX rider mid-air over the Red Bull activation with DJ CHANNELL on the decks"><figcaption>X-Games</figcaption></figure>
       <figure class="rv rv-d3"><img src="assets/img/festival-dusk.jpg" alt="Thousands of people at an outdoor festival at dusk"><figcaption>Festival crowds</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════ GALLERY ══════════════════════════ -->
-<section class="pad" id="gallery" style="background:var(--ink)">
-  <div class="wrap wrap--wide">
-    <div class="shead shead--center rv">
-      <p class="eyebrow eyebrow--center">The Floor</p>
-      <h2 class="display h2">Fifteen years of<br><span class="grad-text">full dance floors.</span></h2>
-    </div>
-
-    <div class="gal rv rv-d1">
-      <figure data-lb><img src="assets/img/crowd-blue.jpg" alt="Crowd shot from behind the DJ booth, hands in the air"></figure>
-      <figure data-lb><img src="assets/img/deck-violet.jpg" alt="DJ CHANNELL mixing under a violet light bar"></figure>
-      <figure data-lb><img src="assets/img/stage-purple.jpg" alt="DJ CHANNELL on a large stage in purple light"></figure>
-      <figure data-lb><img src="assets/img/wedding-reception.jpg" alt="Wedding reception dance floor under string lights"></figure>
-      <figure data-lb><img src="assets/img/slipmat.jpg" alt="Custom DJ CHANNELL turntable slipmat"></figure>
-      <figure data-lb><img src="assets/img/selfie-artists.jpg" alt="DJ CHANNELL with artists in front of a packed crowd"></figure>
-      <figure data-lb><img src="assets/img/stage-beams.jpg" alt="DJ CHANNELL behind the decks with stage beams overhead"></figure>
-      <figure data-lb><img src="assets/img/vinyl-wall.jpg" alt="A wall of DJ CHANNELL's vinyl record collection"></figure>
-      <figure data-lb><img src="assets/img/venue-crowd.jpg" alt="Packed venue seen from the stage"></figure>
-      <figure data-lb><img src="assets/img/artists-group.jpg" alt="DJ CHANNELL with touring artists outside a venue"></figure>
-      <figure data-lb><img src="assets/img/signed-vinyl.jpg" alt="Signed pink vinyl on the turntable"></figure>
-      <figure data-lb><img src="assets/img/wedding-flowergirl.jpg" alt="A flower girl making a request at the DJ booth"></figure>
-      <figure data-lb><img src="assets/img/live-mic.jpg" alt="Live performance with DJ CHANNELL on the decks"></figure>
-      <figure data-lb><img src="assets/img/artist-vinyl.jpg" alt="DJ CHANNELL holding a record with a touring artist"></figure>
-      <figure data-lb><img src="assets/img/venue-orange.jpg" alt="Warm-lit venue crowd mid-set"></figure>
-      <figure data-lb><img src="assets/img/redbull-truck.jpg" alt="DJ CHANNELL with the Red Bull vehicle"></figure>
-      <figure data-lb><img src="assets/img/deck-pink.jpg" alt="Mixer and controller lit in pink"></figure>
-      <figure data-lb><img src="assets/img/collage.jpg" alt="Collage of DJ CHANNELL shows and crowds"></figure>
     </div>
   </div>
 </section>
@@ -470,7 +573,7 @@
       </div>
     </div>
 
-    <div class="rgrid rv rv-d1">
+    <div class="rgrid rv rv-d1 is-collapsed" id="rgrid">
 
       <blockquote class="rev">
         <div class="rev__stars" aria-label="5 out of 5">
@@ -554,11 +657,43 @@
 
     </div>
 
-    <div class="rv rv-d2" style="text-align:center;margin-top:34px">
+    <div class="rv rv-d2" style="text-align:center;margin-top:34px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+      <button class="btn btn--ghost" id="moreReviews" type="button">Show all 10 reviews</button>
       <a class="btn btn--ghost" href="https://www.google.com/maps/place/DJ+CHANNELL+LLC/@40.5658884,-105.0592347,17z/data=!4m8!3m7!1s0x87694bcafbbd6c9f:0x2199cf529e7885d0!8m2!3d40.5658884!4d-105.0592347!9m1!1b1!16s%2Fg%2F11gt_vnf9n" target="_blank" rel="noopener">
         Read all 89 reviews on Google
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ GALLERY ══════════════════════════ -->
+<section class="pad" id="gallery" style="background:var(--ink)">
+  <div class="wrap wrap--wide">
+    <div class="shead shead--center rv">
+      <p class="eyebrow eyebrow--center">The Floor</p>
+      <h2 class="display h2">Fifteen years of<br><span class="grad-text">full dance floors.</span></h2>
+    </div>
+
+    <div class="gal rv rv-d1">
+      <figure data-lb><img src="assets/img/crowd-blue.jpg" alt="Crowd shot from behind the DJ booth, hands in the air"></figure>
+      <figure data-lb><img src="assets/img/deck-violet.jpg" alt="DJ CHANNELL mixing under a violet light bar"></figure>
+      <figure data-lb><img src="assets/img/stage-purple.jpg" alt="DJ CHANNELL on a large stage in purple light"></figure>
+      <figure data-lb><img src="assets/img/wedding-reception.jpg" alt="Wedding reception dance floor under string lights"></figure>
+      <figure data-lb><img src="assets/img/slipmat.jpg" alt="Custom DJ CHANNELL turntable slipmat"></figure>
+      <figure data-lb><img src="assets/img/selfie-artists.jpg" alt="DJ CHANNELL with artists in front of a packed crowd"></figure>
+      <figure data-lb><img src="assets/img/stage-beams.jpg" alt="DJ CHANNELL behind the decks with stage beams overhead"></figure>
+      <figure data-lb><img src="assets/img/vinyl-wall.jpg" alt="A wall of DJ CHANNELL's vinyl record collection"></figure>
+      <figure data-lb><img src="assets/img/venue-crowd.jpg" alt="Packed venue seen from the stage"></figure>
+      <figure data-lb><img src="assets/img/artists-group.jpg" alt="DJ CHANNELL with touring artists outside a venue"></figure>
+      <figure data-lb><img src="assets/img/signed-vinyl.jpg" alt="Signed pink vinyl on the turntable"></figure>
+      <figure data-lb><img src="assets/img/wedding-flowergirl.jpg" alt="A flower girl making a request at the DJ booth"></figure>
+      <figure data-lb><img src="assets/img/live-mic.jpg" alt="Live performance with DJ CHANNELL on the decks"></figure>
+      <figure data-lb><img src="assets/img/artist-vinyl.jpg" alt="DJ CHANNELL holding a record with a touring artist"></figure>
+      <figure data-lb><img src="assets/img/venue-orange.jpg" alt="Warm-lit venue crowd mid-set"></figure>
+      <figure data-lb><img src="assets/img/redbull-truck.jpg" alt="DJ CHANNELL with the Red Bull vehicle"></figure>
+      <figure data-lb><img src="assets/img/deck-pink.jpg" alt="Mixer and controller lit in pink"></figure>
+      <figure data-lb><img src="assets/img/collage.jpg" alt="Collage of DJ CHANNELL shows and crowds"></figure>
     </div>
   </div>
 </section>
@@ -738,6 +873,12 @@
 <div class="bookbar">
   <a class="btn btn--ghost btn--sm" href="tel:+19707320570">Call</a>
   <a class="btn btn--primary btn--sm" href="#book">Check My Date</a>
+</div>
+
+<!-- video modal (YouTube loads only on click) -->
+<div class="vmodal" role="dialog" aria-label="Video player" aria-modal="true">
+  <button class="vmodal__close" aria-label="Close video">✕</button>
+  <div class="vmodal__frame"></div>
 </div>
 
 <!-- lightbox -->

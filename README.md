@@ -56,19 +56,54 @@ go stale. Add it only if Kyle confirms the current numbers.
 
 ## Things that still need Kyle
 
-1. **360 booth footage.** He has no 360-booth video anywhere on the old site — the
-   clip currently in the phone frame (`assets/video/booth-vertical.mp4`) is a
-   wedding dance floor, not the booth. It reads fine as context, but a real
-   spinning-booth clip belongs there. Drop a vertical MP4 in at the same path.
-2. **The wedding video is missing.** The old site had a third clip
-   (`99d02d_01fd043a…`) on the weddings page. Wix returns 403 for it now, so it
-   isn't in `assets/video/`. If he still has the file, add it and put it in the
-   `#showreel` section.
-3. **`booth-vertical.mp4` has Instagram Story UI burned in** ("Fuuun wedding
-   over the weekend"). Authentic, but a clean export would look sharper.
-4. **Instagram** is linked as `@djchannell`. Worth confirming that's current.
-5. **Email address** — the old site had none, so the site routes contact through
-   his HoneyBook quote form, HoneyBook scheduler, and phone number.
+1. **The wedding video is missing.** The old site had a clip on the weddings page
+   (`99d02d_01fd043a…`) that Wix now returns 403 for, so it isn't in
+   `assets/video/`. If he still has the file, add it and put it in `#showreel`.
+2. **`booth-vertical.mp4` has Instagram Story UI burned in** ("Fuuun wedding over
+   the weekend"). It's authentic and it now sits in the Weddings image stack
+   where that reads fine, but a clean export would look sharper.
+3. **Instagram** is linked as `@djchannell`. Worth confirming that's current.
+4. **Email address** — the old site had none, so contact routes through his
+   HoneyBook quote form, HoneyBook scheduler, and phone number.
+
+## What the résumé section claims, and why it's safe to claim it
+
+Three names get a card of their own, and each one is backed by something in the
+frame rather than by assertion:
+
+- **Ice Cube** — his own photo, standing with him, holding a signed "You Can Do
+  It" pressing.
+- **Lil Jon** — the festival running order, rebuilt as live text so it's legible:
+  `5:45pm DJ Channell` sits one slot under `6:45pm Lil Jon`. (The original poster
+  image is still in `assets/img/liljon-lineup.jpg` if you ever want it back.)
+- **Nappy Roots** — his own photo with the group, and he's in their shirt.
+
+The other 46 names scroll past as typographic cards. **No press or promo photos
+of any artist are used anywhere on this site** — licensing a celebrity's
+publicity still for a commercial services page is a fight nobody needs. Two more
+of his photos are in the scroll as neutral tiles ("Packed house", "On the
+decks") because the people in them couldn't be identified with confidence, and
+captioning a face with a name you're guessing at is worse than not captioning it.
+
+If Kyle has more photos of himself with artists on the list, they drop straight
+into `.rollwall` as `.rollphoto` tiles, or become a fourth `.bill` card.
+
+## The 360 booth videos
+
+The three clips in that section are his own YouTube uploads, pulled off the old
+360 page:
+
+| Video | ID |
+|---|---|
+| 360 Video/Photo Booth. NOCO 360 Photos | `jaCkYUIauNo` |
+| Black Tie 360 Event | `7f0W9pak2XM` |
+| Wedding fun with NoCo 360 Photos! | `pqyzmyGLuAg` |
+
+They load as **facades** — the thumbnails are ordinary local JPEGs and no
+YouTube code is fetched until someone actually presses play, at which point the
+embed opens in a modal against `youtube-nocookie.com`. Closing the modal empties
+the iframe, which is what actually stops playback. To swap a video, change the
+`data-yt` attribute and drop a new `assets/img/yt-booth-*.jpg` thumbnail in.
 
 ## Where the booking links go
 
@@ -97,6 +132,13 @@ results don't break when DNS moves.
 - **No count-up animation on the stat numbers.** A counter animating from zero
   shows "0 REVIEWS" and "1 YEARS" for the first second, and those are the exact
   numbers this page is asking people to trust.
+- **Reviews appear four times** — a three-quote ribbon under the hero, a pull
+  quote inside Weddings, one inside the 360 booth section, and the full wall
+  after the résumé. On screens under 900px the full wall shows four cards behind
+  a "Show all 10" button; ten cards in one column ran 4,500px otherwise.
+- **Grid children carry `min-width:0`.** Grid items default to `min-width:auto`,
+  so the `<video>` inside the wedding stack's phone frame pushed its track 70px
+  wider than the column it lived in. If you add media to a grid, pin it.
 - **The hero video is skipped on phones and for `prefers-reduced-motion`** — the
   poster image carries it instead. The `<video>` element is kept rather than
   removed, so widening a narrow window still loads it.

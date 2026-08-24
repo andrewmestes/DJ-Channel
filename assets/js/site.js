@@ -25,7 +25,9 @@
     });
     $$('.drawer a').forEach(function (a) { a.addEventListener('click', closeMenu); });
   }
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { closeMenu(); closeBox(); } });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { closeMenu(); closeBox(); closeVid(); }
+  });
 
   /* ---------- scroll reveal ---------- */
   var rv = $$('.rv');
@@ -115,8 +117,46 @@
     });
   }
 
+  /* ---------- 360 booth video modal ----------
+     Facade pattern: the thumbnails are plain <img>, and no YouTube code is
+     fetched until someone actually presses play. */
+  var vm = $('.vmodal'), vmFrame = $('.vmodal__frame');
+  function openVid(id, title) {
+    if (!vm) return;
+    vmFrame.innerHTML =
+      '<iframe src="https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0" ' +
+      'title="' + (title || 'DJ CHANNELL video') + '" allow="accelerometer; autoplay; ' +
+      'clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ' +
+      'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+    vm.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeVid() {
+    if (!vm) return;
+    vm.classList.remove('is-open');
+    vmFrame.innerHTML = '';           // stops playback
+    document.body.style.overflow = '';
+  }
+  $$('[data-yt]').forEach(function (b) {
+    b.addEventListener('click', function () { openVid(b.dataset.yt, b.getAttribute('aria-label')); });
+  });
+  if (vm) {
+    $('.vmodal__close', vm).addEventListener('click', closeVid);
+    vm.addEventListener('click', function (e) { if (e.target === vm) closeVid(); });
+  }
+
+
+  /* ---------- reviews: show four on mobile, rest on request ---------- */
+  var moreBtn = $('#moreReviews'), rgrid = $('#rgrid');
+  if (moreBtn && rgrid) {
+    moreBtn.addEventListener('click', function () {
+      rgrid.classList.remove('is-collapsed');
+      document.body.classList.add('reviews-open');
+    });
+  }
+
   /* ---------- marquee: duplicate track so the loop is seamless ---------- */
-  $$('.marquee__track').forEach(function (track) {
+  $$('[data-loop]').forEach(function (track) {
     var set = track.firstElementChild;
     if (set) track.appendChild(set.cloneNode(true));
   });
