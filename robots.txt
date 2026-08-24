@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /song-requests.html
+
+Sitemap: https://www.djchannell.com/sitemap.xml

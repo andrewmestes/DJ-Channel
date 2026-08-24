@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wedding Song Requests | DJ CHANNELL</title>
+<meta name="description" content="Looking for the perfect wedding playlist? Submit your song requests to DJ CHANNELL and make your special day even more unforgettable with your favorite tunes!">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#08070A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%2308070A'/%3E%3Ccircle cx='50' cy='50' r='34' fill='none' stroke='%23B026FF' stroke-width='3'/%3E%3Ccircle cx='50' cy='50' r='22' fill='none' stroke='%23FF2D78' stroke-width='3'/%3E%3Ccircle cx='50' cy='50' r='7' fill='%23FF2D78'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="nav is-stuck">
+  <div class="wrap wrap--wide nav__inner">
+    <a class="nav__logo" href="index.html" aria-label="DJ CHANNELL — home"><img src="assets/img/logo.png" alt="DJ CHANNELL"></a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html#weddings">Weddings</a>
+      <a href="index.html#booth">360 Booth</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="index.html#faq">FAQ</a>
+    </nav>
+    <a class="btn btn--primary btn--sm nav__cta" href="index.html#book">Get a Quote</a>
+    <button class="nav__burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="drawer" role="dialog" aria-label="Menu">
+  <a href="index.html">Home</a>
+  <a href="index.html#weddings">Weddings</a>
+  <a href="index.html#booth">360 Booth</a>
+  <a href="index.html#reviews">Reviews</a>
+  <a href="index.html#faq">FAQ</a>
+  <div class="drawer__foot">
+    <a class="btn btn--primary" href="index.html#book">Get a Quote</a>
+    <a class="btn btn--ghost" href="tel:+19707320570">(970) 732-0570</a>
+  </div>
+</div>
+
+<main>
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">For booked couples</p>
+    <h1 class="display h2" style="margin-bottom:20px">Song Requests</h1>
+    <p class="lead" style="max-width:56ch">
+      Looking for the perfect wedding playlist? Submit your song requests to DJ CHANNELL and make your
+      special day even more unforgettable with your favorite tunes!
+    </p>
+  </div>
+</section>
+
+<section style="padding-bottom:clamp(72px,10vw,140px)">
+  <div class="wrap">
+    <form class="form" id="reqForm" novalidate>
+
+      <div class="form__meta">
+        <div class="field">
+          <label for="who">Who's Wedding?</label>
+          <input id="who" name="who" type="text" placeholder="e.g. Jordan &amp; Sam — Aug 14" autocomplete="off" required>
+        </div>
+        <div class="field">
+          <label for="from">Your name</label>
+          <input id="from" name="from" type="text" placeholder="So he knows who sent it" autocomplete="name">
+        </div>
+      </div>
+
+      <p class="eyebrow" style="margin-bottom:14px">Your songs</p>
+      <div class="form__rows" id="rows"></div>
+
+      <div class="form__actions">
+        <button type="button" class="btn btn--ghost btn--sm" id="addRow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          Add another song
+        </button>
+      </div>
+
+      <div class="form__actions" style="margin-top:28px">
+        <a class="btn btn--primary btn--lg" id="sendSms" href="#">
+          Text My List to Kyle
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <button type="button" class="btn btn--ghost btn--lg" id="copyList">Copy My List</button>
+      </div>
+
+      <p class="form__note">
+        This form hands your list straight to Kyle — “Text My List” opens your messages app with everything
+        already typed out to <a href="tel:+19707320570" style="color:var(--violet);font-weight:700">(970)&nbsp;732-0570</a>,
+        and “Copy My List” puts it on your clipboard to paste into an email. Nothing is stored on this site.
+      </p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap wrap--wide">
+    <div class="foot__bot" style="border-top:0;padding-top:0">
+      <span>© <span id="yr">2026</span> DJ CHANNELL LLC. All rights reserved.</span>
+      <span><a href="index.html" style="color:#CFC9D8">Back to djchannell.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast">Copied</div>
+
+<script src="assets/js/site.js"></script>
+<script>
+(function () {
+  var PHONE = '+19707320570';
+  var rows = document.getElementById('rows');
+  var WHEN = ['Cocktail Hour', 'Dinner', 'Reception'];
+
+  function addRow(focus) {
+    var el = document.createElement('div');
+    el.className = 'row';
+    el.innerHTML =
+      '<div class="field"><label>Song Name</label><input type="text" class="s-song" placeholder="Song name" autocomplete="off"></div>' +
+      '<div class="field"><label>Artist Name</label><input type="text" class="s-artist" placeholder="Artist name" autocomplete="off"></div>' +
+      '<div class="field"><label>Play during</label><select class="s-when">' +
+        WHEN.map(function (w) { return '<option>' + w + '</option>'; }).join('') +
+      '</select></div>' +
+      '<button type="button" class="row__kill" aria-label="Remove this song">✕</button>';
+    el.querySelector('.row__kill').addEventListener('click', function () {
+      el.remove();
+      if (!rows.children.length) addRow();
+    });
+    rows.appendChild(el);
+    if (focus) el.querySelector('.s-song').focus();
+  }
+
+  for (var i = 0; i < 3; i++) addRow();
+  document.getElementById('addRow').addEventListener('click', function () { addRow(true); });
+
+  function buildList() {
+    var who = document.getElementById('who').value.trim();
+    var from = document.getElementById('from').value.trim();
+    var lines = [];
+    lines.push('Song requests' + (who ? ' — ' + who : ''));
+    if (from) lines.push('From: ' + from);
+    lines.push('');
+    Array.prototype.forEach.call(rows.children, function (r) {
+      var song = r.querySelector('.s-song').value.trim();
+      var artist = r.querySelector('.s-artist').value.trim();
+      var when = r.querySelector('.s-when').value;
+      if (!song && !artist) return;
+      lines.push('• ' + (song || '(song)') + (artist ? ' — ' + artist : '') + '  [' + when + ']');
+    });
+    return lines.join('\n');
+  }
+
+  function toast(msg) {
+    var t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('is-up');
+    setTimeout(function () { t.classList.remove('is-up'); }, 2200);
+  }
+
+  document.getElementById('sendSms').addEventListener('click', function (e) {
+    e.preventDefault();
+    var body = buildList();
+    if (body.split('\n').length < 4) { toast('Add a song first'); return; }
+    // iOS wants &body=, Android wants ?body= — this form works on both.
+    window.location.href = 'sms:' + PHONE + '?&body=' + encodeURIComponent(body);
+  });
+
+  document.getElementById('copyList').addEventListener('click', function () {
+    var body = buildList();
+    if (body.split('\n').length < 4) { toast('Add a song first'); return; }
+    // The async Clipboard API needs a secure context AND a focused document, so
+    // it rejects more often than you'd think. Always fall through to execCommand
+    // before telling someone their list didn't copy.
+    function legacyCopy() {
+      var ta = document.createElement('textarea');
+      ta.value = body;
+      ta.setAttribute('readonly', '');
+      ta.style.cssText = 'position:fixed;top:0;left:-9999px;opacity:0';
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, body.length);
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch (_) { ok = false; }
+      ta.remove();
+      toast(ok ? 'Copied' : 'Press ⌘C to copy');
+      return ok;
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(body).then(function () { toast('Copied'); }, legacyCopy);
+    } else {
+      legacyCopy();
+    }
+  });
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
