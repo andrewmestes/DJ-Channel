@@ -4,14 +4,26 @@ A rebuild of [djchannell.com](https://www.djchannell.com/). Static HTML/CSS/JS �
 step, no framework, no dependencies. Deploys to Vercel as-is.
 
 ```
-index.html            the site (one page, everything on it)
-song-requests.html    request form for already-booked couples
-assets/css/site.css   all styles
-assets/js/site.js     all behaviour (nav, reveals, accordions, lightbox)
-assets/img/           30 photos pulled from the old Wix site, re-encoded
-assets/video/         2 clips pulled from the old Wix site
-vercel.json           caching, security headers, redirects from the old Wix URLs
+index.html             the main page (one scroll, everything on it)
+weddings.html          → /weddings — the wedding DJ landing page
+360-photo-booth.html   → /360-photo-booth — the booth landing page
+song-requests.html     → /song-requests — request tool for booked couples
+assets/css/site.css    all styles
+assets/js/site.js      all behaviour (nav, reveals, accordions, lightbox, video)
+assets/img/            34 images: his photos re-encoded, plus video thumbnails
+assets/video/          3 clips pulled from the old Wix site
+robots.txt             allows search AND named AI crawlers
+llms.txt               plain-text brief written for answer engines
+sitemap.xml            the three indexable pages
+vercel.json            caching, security headers, 301s from the old Wix URLs
+MIGRATION.md           how to move DNS off Wix without losing rankings
 ```
+
+**The two sub-pages exist for a specific reason.** `/weddingpackages` and
+`/360photoboothrental` were separately indexed on the old site with their own
+rankings. Redirecting them to homepage anchors would have collapsed four ranking
+URLs into one, because `/#weddings` is just `/` to a search engine. They get real
+pages instead. See `MIGRATION.md`.
 
 ## Running it locally
 

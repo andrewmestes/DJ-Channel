@@ -985,3 +985,20 @@ body.menu-open .drawer a{ transform:none; opacity:.9; }
   #moreReviews{ display:inline-flex; }
   body.reviews-open #moreReviews{ display:none; }
 }
+
+/* In a portrait phone viewport the hero fills on height, so only the X of
+   object-position does anything — it picks which ~35% of the frame you see.
+   Centre it on Kyle rather than on the gear beside him. */
+@media (max-width:767px){
+  .hero__media img{ object-position:46% 50%; }
+  .hero__media video{ object-position:56% 50%; }
+}
+
+/* ---- breadcrumbs (sub-pages) ---- */
+.crumbs{
+  display:flex; align-items:center; gap:10px; margin-bottom:20px;
+  font-size:.68rem; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--muted-2);
+}
+.crumbs a{ color:var(--muted); transition:color .25s; }
+.crumbs a:hover{ color:var(--violet); }
+.crumbs span[aria-hidden]{ opacity:.5; }

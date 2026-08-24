@@ -47,21 +47,42 @@
      numbers this page is asking people to trust. They stay static. */
 
   /* ---------- hero video ----------
-     Skipped on phones (data) and for reduced-motion. The element is kept, not
-     removed, so widening the window later still gets the video. */
+     Plays on phones too, with a 3.3MB 360p cut instead of the 6.3MB 480p one.
+     It loads only after `load` + idle so it never competes with the poster
+     image for LCP — the hero still paints instantly, the video fades in behind
+     it a moment later. Skipped entirely for reduced-motion, Data Saver, and
+     2G. If autoplay is blocked (iOS Low Power Mode), the poster just stays. */
+  function whenIdle(fn) {
+    if ('requestIdleCallback' in window) requestIdleCallback(fn, { timeout: 1800 });
+    else setTimeout(fn, 500);
+  }
   var hv = $('[data-hero-video]');
   if (hv) {
-    var wide = window.matchMedia('(min-width: 768px)');
-    var loadHero = function () {
-      if (reduce || !wide.matches || hv.src) return;
-      hv.src = hv.dataset.heroVideo;
+    var conn = navigator.connection || navigator.webkitConnection || {};
+    var thrifty = conn.saveData === true || /(^|\-)2g$/.test(conn.effectiveType || '');
+    var startHero = function () {
+      if (hv.src) return;
+      hv.src = (window.innerWidth < 768 && hv.dataset.heroMobile)
+        ? hv.dataset.heroMobile
+        : hv.dataset.heroVideo;
       hv.addEventListener('canplay', function () { hv.classList.add('is-ready'); }, { once: true });
       var p = hv.play();
-      if (p && p.catch) p.catch(function () { /* autoplay blocked — poster stays */ });
+      if (p && p.catch) p.catch(function () {
+        // iOS Low Power Mode blocks autoplay outright. The poster carries the
+        // hero until the first touch, then we try once more and stop asking.
+        var retry = function () {
+          hv.play().catch(function () {});
+          window.removeEventListener('touchstart', retry);
+          window.removeEventListener('scroll', retry);
+        };
+        window.addEventListener('touchstart', retry, { once: true, passive: true });
+        window.addEventListener('scroll', retry, { once: true, passive: true });
+      });
     };
-    loadHero();
-    if (wide.addEventListener) wide.addEventListener('change', loadHero);
-    else if (wide.addListener) wide.addListener(loadHero);
+    if (!reduce && !thrifty) {
+      if (document.readyState === 'complete') whenIdle(startHero);
+      else window.addEventListener('load', function () { whenIdle(startHero); });
+    }
   }
 
   /* ---------- accordions ---------- */

@@ -4,24 +4,76 @@
   "trailingSlash": false,
   "headers": [
     {
+      "source": "/(robots.txt|llms.txt|sitemap.xml)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    },
+    {
       "source": "/assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
       ]
     }
   ],
   "redirects": [
-    { "source": "/weddingpackages", "destination": "/#weddings", "permanent": true },
-    { "source": "/360photoboothrental", "destination": "/#booth", "permanent": true },
-    { "source": "/quote", "destination": "/#book", "permanent": true },
-    { "source": "/weddingrequests", "destination": "/song-requests", "permanent": true }
+    {
+      "source": "/weddingpackages",
+      "destination": "/weddings",
+      "permanent": true
+    },
+    {
+      "source": "/weddings.html",
+      "destination": "/weddings",
+      "permanent": true
+    },
+    {
+      "source": "/360photoboothrental",
+      "destination": "/360-photo-booth",
+      "permanent": true
+    },
+    {
+      "source": "/360-photo-booth.html",
+      "destination": "/360-photo-booth",
+      "permanent": true
+    },
+    {
+      "source": "/quote",
+      "destination": "/#book",
+      "permanent": true
+    },
+    {
+      "source": "/weddingrequests",
+      "destination": "/song-requests",
+      "permanent": true
+    },
+    {
+      "source": "/song-requests.html",
+      "destination": "/song-requests",
+      "permanent": true
+    }
   ]
 }
