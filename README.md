@@ -135,6 +135,32 @@ function — the list is already assembled in `buildList()`.
 `/quote`, `/weddingrequests`) to their new anchors, so existing links and search
 results don't break when DNS moves.
 
+## Caching — read this before touching vercel.json
+
+This bit the site once already. `site.css` and `site.js` have **stable
+filenames**, and they were being served with `Cache-Control: max-age=31536000,
+immutable`. That tells a browser "this file will never change, do not even ask
+again, for a year." The HTML kept updating; the stylesheet did not. Phones that
+had loaded the site once were rendering new markup against a months-old
+stylesheet — 13px stars fell back to 100% width and filled the screen, and the
+old `site.js` still had a gate that stripped the hero video on mobile.
+
+`immutable` is only safe when the filename changes with the content. It does not
+here. So:
+
+- **CSS and JS always revalidate** (`max-age=0, must-revalidate`). They are a few
+  KB; a 304 costs nothing and correctness is worth more.
+- **Images and video get a day**, with `stale-while-revalidate`, not a year —
+  several have been re-cropped in place.
+- **Every page links `site.css?v=<hash>`.** Headers only help the *next*
+  fetch; a browser already holding a poisoned copy needs a different URL. Run
+  `python3 bump-assets.py` after editing CSS or JS and it restamps the hash in
+  every HTML file.
+
+Inline SVGs also all carry `width`/`height` attributes now. An SVG with only a
+`viewBox` expands to its container when CSS doesn't reach it, which is *why* a
+missing stylesheet produced full-screen stars rather than merely ugly ones.
+
 ## Notes on the build
 
 - **Palette is his.** The magenta / violet / blue was sampled out of his own
