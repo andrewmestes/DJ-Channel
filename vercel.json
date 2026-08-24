@@ -43,37 +43,37 @@
     {
       "source": "/weddingpackages",
       "destination": "/weddings",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/weddings.html",
       "destination": "/weddings",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/360photoboothrental",
       "destination": "/360-photo-booth",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/360-photo-booth.html",
       "destination": "/360-photo-booth",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/quote",
       "destination": "/#book",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/weddingrequests",
       "destination": "/song-requests",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/song-requests.html",
       "destination": "/song-requests",
-      "permanent": true
+      "statusCode": 301
     }
   ]
 }
